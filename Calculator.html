@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Calculator.css">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <form id="main">
+    <h2>Simple Calculator</h2>
+    <input id="inp1" type="number"  placeholder="Enter 1st number"><br>
+    <input  id="inp2" type="number" placeholder="Enter 2nd number"></br>
+        <div class="operations">
+            <button type="submit" value="+"  onclick=f(); >+</button>
+            <button type="submit" value="-"  onclick=f(); >-</button>
+            <button type="submit" value="*"  onclick=f();>*</button>
+            <button type="submit" value="/" onclick=f(); >/</button>
+            <input id="output" readonly type="number" placeholder="Output">
+        </div>
+    </form>
+</body>
+<script>
+    function f(){
+    var  x=Number(document.getElementById("inp1").value);
+    var  y=Number(document.getElementById("inp2").value);
+    var  z=document.getElementById("output");
+    var  a=document.querySelectorAll("button");
+    for (var i = 0; i<a.length; i++){
+            if(a[i].value==='+')
+            {
+            z.setAttribute('value', x+y);
+            }
+            if(a[i].value==='-')
+            {
+            z.setAttribute('value', x-y);
+            }
+            if(a[i].value==='*')
+            {
+            z.setAttribute('value', x*y);
+            }
+            if(a[i].value==='/')
+            {
+            z.setAttribute('value', x/y);
+            }
+        }
+        
+    }
+</script>
+</html>
